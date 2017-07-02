@@ -1,0 +1,7 @@
+.container {
+  width: 100%;
+  max-width: 768px;
+  min-width: 768px;
+  margin: 0 auto;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
