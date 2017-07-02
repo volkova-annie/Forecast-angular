@@ -1,0 +1,6 @@
+<div class="container">
+  <input type="text" (input)="onType($event)" [value]="value" name="city" class="city" placeholder="Please enter city"/>
+  <ul *ngIf="hasCities()" class="list">
+    <li (click)="onChoose(city)" *ngFor="let city of cities" class="list-item">{{city}}</li>
+  </ul>
+</div>
