@@ -1,0 +1,36 @@
+<div class="forecast">
+  <div class="column">
+    <suggestion (selectCity)="selectCity($event)" class="suggestion"></suggestion>
+  </div>
+  <div *ngIf="hasForecast($city)" class="column result">
+    <div class="column-city">{{forecast.name}}, {{forecast.sys.country}}</div>
+    <div class="column-weather">
+      <div class="main" [style.display]="city ? 'block' : 'none'">
+        <div class="temp">{{convertTemp(forecast.main.temp)}}&#8451;</div>
+        <div class="description">{{forecast.weather[0].main}}</div>
+      </div>
+      <ul class="list">
+        <li class="list-item">
+          <div class="list-item-index">T-min: </div>
+          <div class="list-item-index">{{convertTemp(forecast.main.temp_min)}}&#8451;</div>
+        </li>
+        <li class="list-item">
+          <div class="list-item-index">T-max: </div>
+          <div class="list-item-index">{{convertTemp(forecast.main.temp_max)}}&#8451;</div>
+        </li>
+        <li class="list-item">
+          <div class="list-item-index">Pressure: </div>
+          <div class="list-item-index">{{forecast.main.pressure}}mm</div>
+        </li>
+        <li class="list-item">
+          <div class="list-item-index">Humidity: </div>
+          <div class="list-item-index">{{forecast.main.humidity}}%</div>
+        </li>
+        <li class="list-item">
+          <div class="list-item-index">Wind: </div>
+          <div class="list-item-index">{{forecast.wind.speed}}m/s</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
